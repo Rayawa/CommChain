@@ -1,0 +1,15 @@
+/Users/raychen/Develop/CommChain/src/CommChain.App/bin/Debug/net10.0/data/topology.txt
+/Users/raychen/Develop/CommChain/src/CommChain.App/bin/Debug/net10.0/CommChain.App
+/Users/raychen/Develop/CommChain/src/CommChain.App/bin/Debug/net10.0/CommChain.App.deps.json
+/Users/raychen/Develop/CommChain/src/CommChain.App/bin/Debug/net10.0/CommChain.App.runtimeconfig.json
+/Users/raychen/Develop/CommChain/src/CommChain.App/bin/Debug/net10.0/CommChain.App.dll
+/Users/raychen/Develop/CommChain/src/CommChain.App/bin/Debug/net10.0/CommChain.App.pdb
+/Users/raychen/Develop/CommChain/src/CommChain.App/obj/Debug/net10.0/CommChain.App.GeneratedMSBuildEditorConfig.editorconfig
+/Users/raychen/Develop/CommChain/src/CommChain.App/obj/Debug/net10.0/CommChain.App.AssemblyInfoInputs.cache
+/Users/raychen/Develop/CommChain/src/CommChain.App/obj/Debug/net10.0/CommChain.App.AssemblyInfo.cs
+/Users/raychen/Develop/CommChain/src/CommChain.App/obj/Debug/net10.0/CommChain.App.csproj.CoreCompileInputs.cache
+/Users/raychen/Develop/CommChain/src/CommChain.App/obj/Debug/net10.0/CommChain.App.dll
+/Users/raychen/Develop/CommChain/src/CommChain.App/obj/Debug/net10.0/refint/CommChain.App.dll
+/Users/raychen/Develop/CommChain/src/CommChain.App/obj/Debug/net10.0/CommChain.App.pdb
+/Users/raychen/Develop/CommChain/src/CommChain.App/obj/Debug/net10.0/CommChain.App.genruntimeconfig.cache
+/Users/raychen/Develop/CommChain/src/CommChain.App/obj/Debug/net10.0/ref/CommChain.App.dll

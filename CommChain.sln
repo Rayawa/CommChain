@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommChain.App", "src\CommChain.App\CommChain.App.csproj", "{BFDC7D90-DC15-4FD9-AA79-EEFBA76BC999}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommChain.Tests", "tests\CommChain.Tests\CommChain.Tests.csproj", "{DC00EC96-EF7D-49B7-802E-F6F20FE7CE40}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFDC7D90-DC15-4FD9-AA79-EEFBA76BC999}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFDC7D90-DC15-4FD9-AA79-EEFBA76BC999}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFDC7D90-DC15-4FD9-AA79-EEFBA76BC999}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFDC7D90-DC15-4FD9-AA79-EEFBA76BC999}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC00EC96-EF7D-49B7-802E-F6F20FE7CE40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC00EC96-EF7D-49B7-802E-F6F20FE7CE40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC00EC96-EF7D-49B7-802E-F6F20FE7CE40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC00EC96-EF7D-49B7-802E-F6F20FE7CE40}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

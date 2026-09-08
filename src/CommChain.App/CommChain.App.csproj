@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>CommChain.App</RootNamespace>
+    <AssemblyName>CommChain.App</AssemblyName>
+  </PropertyGroup>
+
+  <!-- 拓扑配置文件随构建复制到输出目录，保证任意工作目录下 dotnet run 均可加载 -->
+  <ItemGroup>
+    <None Update="data/topology.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
