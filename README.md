@@ -19,18 +19,18 @@ A comprehensive programming-practice project implemented in C#. It uses **the co
 ### 2. Install the .NET SDK
 
 ```bash
-# macOS（推荐，Homebrew）
+# macOS (recommended, Homebrew)
 brew install dotnet
 
-# 或从官网下载安装包：https://dotnet.microsoft.com/download
-# Windows / Linux 均可使用官方安装器，安装完成后验证：
+# Or download the official installer: https://dotnet.microsoft.com/download
+# Windows / Linux can use the official installer; verify after installation:
 dotnet --version
 ```
 
 ### 3. Run the Application
 
 ```bash
-# 在项目根目录（CommChain/）下执行
+# Run from the project root (CommChain/)
 dotnet run --project src/CommChain.App
 ```
 
@@ -39,7 +39,7 @@ The main menu appears after startup. Enter a number (1–8) to select a demonstr
 ### 4. Run All Unit Tests
 
 ```bash
-# 在项目根目录（CommChain/）下执行
+# Run from the project root (CommChain/)
 dotnet test
 ```
 
@@ -92,22 +92,22 @@ All 50+ test cases are expected to pass. Tests use a fixed random seed (42) for 
 ## Complete End-to-End Chain (Menu 8, Complete Mode, 9 Stages)
 
 ```
-应用层    文本
-   │ 阶段2  霍夫曼信源编码（第一阶段：频率统计→优先队列建树→前缀码）
-表示层    压缩比特流 + META 帧（码表序列化 + 有效长度）
-   │ 阶段3  组帧：帧头[type/source/dest/seq/长度] + 载荷 + CRC-8（第二阶段）
-链路层    META 帧 + 若干 DATA 帧
-   │ 阶段4  网络层：真实包与背景噪声包合并入队 → 按目的地分流（综合项目一）
-网络层    → Dijkstra 最短路径路由（第三阶段：图 + 文件 I/O 拓扑）
-   │ 阶段5  信道编码：汉明码(7,4)，每 4bit → 7bit（第二阶段）
-物理层    帧比特流
-   │ 阶段6  FSK/ASK 调制 → 信道加噪 + 按 BER 比特翻转（第三阶段/综合项目二）
-信道      三档错误：0 无差错 / 1 少量可纠 / 2 高频超限
-   │ 阶段7  解调 → 汉明纠错（定位并翻转错误位）→ 拆帧 + CRC 校验兜底
-接收端    丢弃 CRC 失败帧与背景噪声包
-   │ 阶段8  霍夫曼解码（按 META 帧恢复码表与有效长度）
-信宿      恢复文本
-   │ 阶段9  一致性验证 + 链路统计表（压缩率/BER/纠错数/CRC 失败数/路由）
+Application    Text
+   │ Stage 2  Huffman source coding (phase 1: frequencies → priority-queue tree → prefix codes)
+Presentation   Compressed bits + META frame (serialized code table + valid length)
+   │ Stage 3  Framing: header[type/source/dest/seq/length] + payload + CRC-8 (phase 2)
+Data link      META frame + DATA frames
+   │ Stage 4  Network: enqueue real and background-noise packets → dispatch by destination (integrated project 1)
+Network        → Dijkstra shortest-path routing (phase 3: graph + topology file I/O)
+   │ Stage 5  Channel coding: Hamming (7,4), every 4 bits → 7 bits (phase 2)
+Physical       Frame bitstream
+   │ Stage 6  FSK/ASK modulation → channel noise + BER-based bit flips (phase 3 / integrated project 2)
+Channel        Three error levels: 0 none / 1 few correctable / 2 frequent beyond capacity
+   │ Stage 7  Demodulation → Hamming correction (locate and flip) → deframing + CRC fallback
+Receiver       Discard CRC-failed frames and background-noise packets
+   │ Stage 8  Huffman decoding (restore code table and valid length from META)
+Destination    Recovered text
+   │ Stage 9  Consistency check + link statistics (compression/BER/corrections/CRC failures/routes)
 ```
 
 ### Three Error Settings (Corresponding to the Report's Test Cases)
@@ -123,21 +123,21 @@ All 50+ test cases are expected to pass. Tests use a fixed random seed (42) for 
 ```
 CommChain/
 ├── CommChain.sln
-├── src/CommChain.App/                  # 主程序（控制台）
-│   ├── Program.cs                      # 入口 + 主菜单循环
-│   ├── MenuDemos.cs                    # 8 个菜单项演示入口
-│   ├── Common/BitSequence.cs           # 全链路统一比特容器（MSB first）
-│   ├── SourceCoding/HuffmanCoder.cs    # 霍夫曼编码（含码表序列化）
-│   ├── Queueing/LinkedListQueue.cs     # 手写链表队列
-│   ├── Queueing/PacketDispatcher.cs    # 多信源包生成与分流
-│   ├── ErrorControl/CrcCalculator.cs   # CRC-8 + 简易校验和
-│   ├── ErrorControl/HammingCodec.cs    # 汉明码(7,4) 编解码纠错
-│   ├── PacketLayer/DataPacket.cs       # 帧结构 + FrameCodec 组帧/拆帧
-│   ├── Topology/NetworkTopology.cs     # 邻接矩阵 + Dijkstra + Floyd + 文件 I/O
-│   ├── Modulation/Modulator.cs         # ASK/FSK 调制器（多态）+ 信道模型
-│   ├── EndToEnd/EndToEndSimulator.cs   # 9 阶段链路编排 + 简化模式
-│   └── data/topology.txt               # 网络拓扑配置文件
-└── tests/CommChain.Tests/              # xUnit 单元测试（6 个测试类、50+ 用例）
+├── src/CommChain.App/                  # Main console application
+│   ├── Program.cs                      # Entry point and main menu loop
+│   ├── MenuDemos.cs                    # Demo entry points for 8 menu items
+│   ├── Common/BitSequence.cs           # Shared bit container for the full pipeline (MSB first)
+│   ├── SourceCoding/HuffmanCoder.cs    # Huffman coding, including code-table serialization
+│   ├── Queueing/LinkedListQueue.cs     # Handwritten linked-list queue
+│   ├── Queueing/PacketDispatcher.cs    # Multiple-source packet generation and dispatch
+│   ├── ErrorControl/CrcCalculator.cs   # CRC-8 and simple checksum
+│   ├── ErrorControl/HammingCodec.cs    # Hamming (7,4) encoding, decoding, and correction
+│   ├── PacketLayer/DataPacket.cs       # Frame structure and FrameCodec assembly/disassembly
+│   ├── Topology/NetworkTopology.cs     # Adjacency matrix, Dijkstra, Floyd, and file I/O
+│   ├── Modulation/Modulator.cs         # Polymorphic ASK/FSK modulators and channel model
+│   ├── EndToEnd/EndToEndSimulator.cs   # Nine-stage orchestration and simplified mode
+│   └── data/topology.txt               # Network topology configuration
+└── tests/CommChain.Tests/              # xUnit tests (6 test classes, 50+ cases)
 ```
 
 ## Key Design Notes
